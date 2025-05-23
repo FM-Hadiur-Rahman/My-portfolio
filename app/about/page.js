@@ -64,9 +64,11 @@ export default function About() {
           transition={{ duration: 0.8, delay: 1 }}
           className="text-gray-400 leading-relaxed mt-4"
         >
-          My experience includes developing applications for **restaurant
-          management, booking platforms, and real-time maps**. I continuously
-          explore new technologies to enhance my skills.
+          My experience includes developing applications for{" "}
+          <strong>
+            restaurant management, booking platforms, and real-time maps
+          </strong>
+          . I continuously explore new technologies to enhance my skills.
         </motion.p>
 
         {/* Social Links with Hover Effects */}
