@@ -5,9 +5,21 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 
 const projects = [
-  { title: "Project 1", slug: "project-1", image: "/images/project-1.jpg" },
-  { title: "Project 2", slug: "project-2", image: "/images/project-2.jpg" },
-  { title: "Project 3", slug: "project-3", image: "/images/project-3.jpg" },
+  {
+    title: "BanglaBnB – Airbnb for Bangladesh",
+    slug: "banglabnb",
+    image: "/images/banglabnb.jpg",
+  },
+  {
+    title: "Natours – Tour Booking App",
+    slug: "natours",
+    image: "/images/natours.jpg",
+  },
+  {
+    title: "Log Cabin Reservation",
+    slug: "log-cabin",
+    image: "/images/log-cabin.jpg",
+  },
 ];
 
 export default function Projects() {

@@ -2,21 +2,52 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
+import ReCAPTCHA from "react-google-recaptcha";
+import { useRef } from "react";
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
   });
+  const [loading, setLoading] = useState(false);
+
+  const [captchaToken, setCaptchaToken] = useState("");
+  const recaptchaRef = useRef(null);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    alert("Message Sent!"); // Replace with actual API call or email service
-    setFormData({ name: "", email: "", message: "" });
+    if (!captchaToken) return alert("Please verify reCAPTCHA");
+
+    setLoading(true);
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...formData, captchaToken }),
+      });
+
+      const data = await res.json();
+
+      if (res.ok) {
+        alert("✅ Message sent!");
+        setFormData({ name: "", email: "", message: "" });
+        recaptchaRef.current.reset(); // ✅ Reset the checkbox
+        setCaptchaToken(""); // ✅ Clear the token too
+      } else {
+        alert("❌ Failed: " + data.error);
+      }
+    } catch (err) {
+      console.error("❌ Error:", err);
+      alert("❌ Could not send message.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -72,12 +103,21 @@ export default function Contact() {
               className="w-full mt-1 p-2 bg-gray-700 text-white rounded border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
           </div>
+          <ReCAPTCHA
+            ref={recaptchaRef}
+            sitekey="6LfdlkArAAAAAIpZHkytzSdNjmUUbP2nKtWj5xSX"
+            onChange={(token) => setCaptchaToken(token)}
+            theme="dark"
+          />
 
           <button
             type="submit"
-            className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded"
+            disabled={loading}
+            className={`w-full ${
+              loading ? "bg-gray-600" : "bg-blue-600 hover:bg-blue-700"
+            } text-white font-semibold py-2 px-4 rounded`}
           >
-            Send Message
+            {loading ? "Sending..." : "Send Message"}
           </button>
         </form>
 

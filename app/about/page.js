@@ -52,9 +52,11 @@ export default function About() {
           transition={{ duration: 0.8, delay: 0.8 }}
           className="text-gray-400 leading-relaxed"
         >
-          I'm a passionate full-stack engineer specializing in **React, Next.js,
-          Node.js, and MongoDB**. I build **scalable, user-friendly, and
-          high-performance** applications to solve real-world challenges.
+          {"I'm a passionate full-stack engineer specializing in "}
+          <strong>React, Next.js, Node.js, and MongoDB</strong>
+          {
+            " and I build scalable, user-friendly, and high-performance applications to solve real-world challenges."
+          }
         </motion.p>
         <motion.p
           initial={{ opacity: 0, y: 10 }}
