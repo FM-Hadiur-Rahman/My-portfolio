@@ -13,7 +13,7 @@ export default function Home() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: "easeInOut" }}
       >
-        Hi, I'm Rahman
+        {"Hi, I'm Rahman"}
       </motion.h1>
       <p className="text-lg text-gray-300 mb-6">
         Full-Stack Developer | React | Node.js | MongoDB
