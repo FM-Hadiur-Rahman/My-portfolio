@@ -16,7 +16,7 @@ const projects = {
     live: "https://banglabnb.com/",
     code: "https://github.com/FM-Hadiur-Rahman/banglabnb",
   },
-  natours: {
+  "bd-tours": {
     title: "bd-tours",
     description:
       "Another awesome project description for a task manager app built using modern web technologies.",
