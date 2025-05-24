@@ -4,16 +4,23 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
+// export const metadata = {
+//   title: "BanglaBnB – Project Overview | Your Name",
+//   description:
+//     "A full-stack vacation rental app for Bangladesh built using Next.js, Supabase, and Tailwind.",
+// };
+
 const projects = [
   {
     title: "BanglaBnB – Airbnb for Bangladesh",
     slug: "banglabnb",
-    image: "/images/banglabnb.jpg",
+    image: "/images/banglabnb.jpg", // make sure to add this image in /public/images/
   },
+
   {
-    title: "Natours – Tour Booking App",
-    slug: "natours",
-    image: "/images/natours.jpg",
+    title: "BD-Tours – Tour Booking App",
+    slug: "bd-tours",
+    image: "/images/bd-tours.jpg",
   },
   {
     title: "Log Cabin Reservation",

@@ -10,17 +10,17 @@ const projects = {
   banglabnb: {
     title: "banglabnb",
     description:
-      "This is a cool project about XYZ. It includes full-stack features and responsive design.",
-    image: "/images/project-1.jpg",
+      "A full-stack platform for booking accommodations across Bangladesh. It features user registration, listing management for hosts, and map-based search functionality.",
+    image: "/images/banglabnb.jpg",
     tech: ["React", "Node.js", "MongoDB"],
-    live: "https://example.com/project-1",
-    code: "https://github.com/yourusername/project-1",
+    live: "https://banglabnb.com/",
+    code: "https://github.com/FM-Hadiur-Rahman/banglabnb",
   },
   natours: {
-    title: "natours",
+    title: "bd-tours",
     description:
       "Another awesome project description for a task manager app built using modern web technologies.",
-    image: "/images/project-2.jpg",
+    image: "/images/bd-tours.jpg",
     tech: ["Next.js", "Tailwind CSS", "Firebase"],
     live: "https://example.com/project-2",
     code: "https://github.com/yourusername/project-2",
