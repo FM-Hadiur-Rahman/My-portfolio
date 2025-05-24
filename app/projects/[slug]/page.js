@@ -19,11 +19,11 @@ const projects = {
   "bd-tours": {
     title: "bd-tours",
     description:
-      "Another awesome project description for a task manager app built using modern web technologies.",
+      "A dynamic tour booking frontend built with Next.js and Tailwind CSS, seamlessly integrated with the Natours API. Users can browse, view, and manage tour packages with modern UI, interactive maps, and authentication support.",
     image: "/images/bd-tours.jpg",
-    tech: ["Next.js", "Tailwind CSS", "Firebase"],
-    live: "https://example.com/project-2",
-    code: "https://github.com/yourusername/project-2",
+    tech: ["Next.js", "Tailwind CSS", "Context API", "Render API"],
+    live: "https://bd-tours-f-m-hadiur-rahmans-projects.vercel.app/", // Replace with your actual URL
+    code: "https://github.com/FM-Hadiur-Rahman/bd-tours",
   },
   "log-cabin": {
     title: "log-cabin",
